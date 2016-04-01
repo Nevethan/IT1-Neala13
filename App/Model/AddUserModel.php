@@ -1,6 +1,6 @@
 <?php
-
-require 'App\DBConnection\Config.php';
+namespace App\Model;
+use PDO;
 
 class AddUserModel{
     
@@ -8,12 +8,15 @@ class AddUserModel{
         
         $userinput = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $passinput = filter_input(INPUT_POST,'password', FILTER_SANITIZE_NUMBER_INT);
-    
-        $query = mysql_query("SELECT * FROM users WHERE username = '$userinput'");
-    
+        
+        require CONTROLLER_DIR . '/DBConnection/Config.php';
+        
+        $q = $query->query("SELECT * FROM users WHERE username = '$userinput'");
+        
         if($userinput && $passinput){
         
-            $check = mysql_num_rows($query);
+            //$check = mysql_num_rows($result);
+            $check = $q->fetchColumn();
             if($check == 0){
                 //Add user here
                 mysql_query("INSERT INTO users (username,password) VALUES ('$userinput', '$passinput')" );

@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-require 'App\Model\LoginModel.php';
-require 'App\DBConnection\Config.php';
+require MODEL_DIR .'/LoginModel.php';
 
 class LoginController{
     

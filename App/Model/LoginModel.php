@@ -1,7 +1,6 @@
 <?php
 namespace App\Model;
-
-require 'App\DBConnection\Config.php';
+use PDO;
 
 class LoginModel{
     
@@ -9,16 +8,17 @@ class LoginModel{
         
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_NUMBER_INT);
-        
-        $query = mysql_query("SELECT * FROM users WHERE username='$username'");
-        $info = mysql_fetch_assoc($query);
+        $password = hash("sha256", $password);
+       
+        require CONTROLLER_DIR . '/DBConnection/Config.php';
+        $q = $database->query('SELECT * FROM users WHERE username="'.$username.'" && password ="'.$password.'";');
+        $q->setFetchMode(PDO::FETCH_ASSOC);
             
-        $usernameDb = $info['username'];
-        $passwordDb = $info['password'];
-            
+        //$usernameDb = $q['username'];
+        //$passwordDb = $q['password'];
             
         if($username && $password){
-            $this->validateUser($usernameDb, $passwordDb, $query);
+            $this->validateUser($q);
             return true;
         }else{
             die("Please Enter username and password, please! <a href='/'> Return to Login.</a>");
@@ -26,12 +26,11 @@ class LoginModel{
         
     }
     
-    function validateUser($usernameDb, $passwordDb, $query){
-            $rowsnumber = mysql_num_rows($query);
+    function validateUser($query){
+            $rowsnumber = $query->fetchColumn();
                 if ($rowsnumber != 0) {
-                    while ($info = mysql_fetch_assoc($query)) {
+                    while ($info = $query->fetch(PDO::FETCH_ASSOC)) {
                         $usernameDb = $info['username'];
-                        $passwordDb = $info['password'];
                         $_SESSION['username'] = $usernameDb;
                     }
                 }else{

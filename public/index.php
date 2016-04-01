@@ -14,6 +14,8 @@ ini_set('display_errors', 1);
 
 // Define some global constants
 define('VIEW_DIR', realpath(__DIR__ . '/../views'));
+define('CONTROLLER_DIR', realpath(__DIR__ . '/../App/Controller'));
+define('MODEL_DIR', realpath(__DIR__ . '/../App/Model'));
 
 
 /*******************
@@ -39,8 +41,8 @@ $router = new Router();
 $router->addRoute('GET', '/', ['App\\Controller\\LoginController', 'showPage']);
 $router->addRoute('POST', '/login',['App\\Controller\\LoginController', 'invoke']);
 $router->addRoute('POST','/gallery', ['App\\Controller\\LoginController', 'invoke']);
-$router->addRoute('POST', '/userform',['App\\Controller\\AddUserController', 'invoke']);
 $router->addRoute('GET', '/userform',['App\\Controller\\AddUserController', 'showPage']);
+$router->addRoute('POST', '/userform',['App\\Controller\\AddUserController', 'invoke']);
 
 // Convert i.e. "/foo%40bar?id=1" to "/foo@bar"
 $uri = rawurldecode(parse_url(filter_input(INPUT_SERVER, 'REQUEST_URI'), PHP_URL_PATH));

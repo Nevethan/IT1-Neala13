@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-require 'App\Model\AddUserModel.php';
-require 'App\DBConnection\Config.php';
+require MODEL_DIR . '/AddUserModel.php';
 
 class AddUserController{
     
