@@ -40,8 +40,12 @@ $container = new Container();
 $router = new Router();
 $router->addRoute('GET', '/', ['App\\Controller\\LoginController', 'showPage']);
 $router->addRoute('POST','/gallery', ['App\\Controller\\LoginController', 'invoke']);
-$router->addRoute('GET', '/userform',['App\\Controller\\AddUserController', 'showPage']);
-$router->addRoute('POST', '/userform',['App\\Controller\\AddUserController', 'invoke']);
+$router->addRoute('GET', '/logout', ['App\\Controller\\LoginController', 'logOut']);
+$router->addRoute('GET', '/userform',['App\\Controller\\UserController', 'showPage']);
+$router->addRoute('POST', '/userform',['App\\Controller\\UserController', 'invoke']);
+$router->addRoute('GET', '/deleteform', ['App\\Controller\\UserController', 'showDeletePage']);
+$router->addRoute('POST', '/deleteform',['App\\Controller\\UserController', 'invokeDelete']);
+
 
 // Convert i.e. "/foo%40bar?id=1" to "/foo@bar"
 $uri = rawurldecode(parse_url(filter_input(INPUT_SERVER, 'REQUEST_URI'), PHP_URL_PATH));

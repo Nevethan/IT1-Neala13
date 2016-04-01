@@ -9,15 +9,16 @@
         <h1> Gallery</h1>
         <a href = "UploadFormPage.php"> UpLoad a Picture</a>
         <a href= "/logout"> LogOut </a>
+        <a href="/deleteform"> Delete User </a>
         
         <ul>
             <li><figure> 
-                    <img src="/views/Images/Siva.jpg">
+                    <img src="/assets/Images/Siva.jpg">
                 <figcaption> Siva the Destroyer</figcaption>
                 </figure>
             </li>
             <li><figure> 
-                    <img src="Images/pwyjBcW.jpg">
+                    <img src="/assets/Images/pwyjBcW.jpg">
                 <figcaption> Meditation</figcaption>
                 </figure>
             </li>

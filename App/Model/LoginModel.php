@@ -19,6 +19,7 @@ class LoginModel{
             
         if($username && $password){
             $this->validateUser($q);
+            
             return true;
         }else{
             die("Please Enter username and password, please! <a href='/'> Return to Login.</a>");
@@ -35,7 +36,6 @@ class LoginModel{
                     }
                 }else{
                     die("Username does not exist. Do you want to <a href='/userform'> Register?</a> " .  "or <a href='/'> Go Back?");
-                    
                 }
         }
 }
