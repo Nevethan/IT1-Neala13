@@ -11,7 +11,7 @@ class AddUserModel{
         
         require CONTROLLER_DIR . '/DBConnection/Config.php';
         
-        $q = $query->query("SELECT * FROM users WHERE username = '$userinput'");
+        $q = $database->query("SELECT * FROM users WHERE username = '$userinput'");
         
         if($userinput && $passinput){
         
@@ -19,9 +19,11 @@ class AddUserModel{
             $check = $q->fetchColumn();
             if($check == 0){
                 //Add user here
-                mysql_query("INSERT INTO users (username,password) VALUES ('$userinput', '$passinput')" );
-                header('Location: GalleryPage.php');
-                //mysql_close($connect);
+                $stm = $database->query("INSERT INTO users (username,password) VALUES ('$userinput', '$passinput')" );
+                $stm->execute();
+                
+                //header('Location: GalleryPage.php');
+                
             }else{
                 die("The Username is already being used. Try again !");
             }
