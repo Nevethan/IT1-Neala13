@@ -34,7 +34,8 @@ class LoginModel{
                         $_SESSION['username'] = $usernameDb;
                     }
                 }else{
-                    die("Username does not exist");
+                    die("Username does not exist. Do you want to <a href='/userform'> Register?</a> " .  "or <a href='/'> Go Back?");
+                    
                 }
         }
 }

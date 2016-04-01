@@ -13,19 +13,21 @@ class AddUserModel{
         
         $q = $database->query("SELECT * FROM users WHERE username = '$userinput'");
         
+        
+        
         if($userinput && $passinput){
         
             //$check = mysql_num_rows($result);
             $check = $q->fetchColumn();
             if($check == 0){
                 //Add user here
+                $passinput = hash("sha256", $passinput);
                 $stm = $database->query("INSERT INTO users (username,password) VALUES ('$userinput', '$passinput')" );
-                $stm->execute();
-                
+                $database = null;
+                return true;
                 //header('Location: GalleryPage.php');
-                
             }else{
-                die("The Username is already being used. Try again !");
+                die("The Username is already being used. <a href='/userform'> Try Again!");
             }
         }
     }

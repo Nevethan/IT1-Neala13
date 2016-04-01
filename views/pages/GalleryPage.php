@@ -3,12 +3,12 @@
         <title>MyFirstWebSite - Gallery</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type ="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type ="text/css" href="/assets/css/stylesheet.css">
     </head>
     <body>
         <h1> Gallery</h1>
         <a href = "UploadFormPage.php"> UpLoad a Picture</a>
-        <a href= "Logout.php"> LogOut </a>
+        <a href= "/logout"> LogOut </a>
         
         <ul>
             <li><figure> 
@@ -17,7 +17,7 @@
                 </figure>
             </li>
             <li><figure> 
-                <img src="Images/pwyjBcW.jpg">
+                    <img src="Images/pwyjBcW.jpg">
                 <figcaption> Meditation</figcaption>
                 </figure>
             </li>

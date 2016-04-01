@@ -10,19 +10,20 @@
         <title>MyFirstWebSite - Add New User</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type ="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type ="text/css" href="/assets/css/stylesheet.css">
     </head>
     <body>
         <h1> Add New User</h1>
-        <form action="/" method ="POST">
+        <form action="/userform" method ="POST">
             <fieldset>
                 <legend>Add new User</legend>
                 Username:
                 <input type="text" name="username"><br><br>
                 Password:
                 <input type="password" name="password"><br><br>
-                <input type="submit" name='submit'>
+                <input type="submit" name='submit'><br>
             </fieldset>
+            <a href="/"> Login </a>
         </form>   
     </body>
 </html>

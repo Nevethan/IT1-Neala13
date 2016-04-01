@@ -20,9 +20,9 @@ class AddUserController{
         $result = $this->addUser->addUser();
         
         if($result){
-            echo "You have been succesfully Registered. <a href='/'> Click here to Login >";
+            echo "You have been succesfully Registered. <a href='/'> Click here to Login";
         }else{
-            die("Unable to Register you. Please <a href='/userform'> Try Again!>");
+            die("Unable to Register you. Please <a href='/userform'> Try Again!");
         }
     }
     
