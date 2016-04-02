@@ -74,13 +74,14 @@ class UserModel{
         
         require CONTROLLER_DIR . '/DBConnection/Config.php';
         
-        //$q = $database->query("SELECT * FROM users WHERE username = '$userinput'");
-        $passinput = hash("sha256", $passinput);
         $query = "UPDATE users SET username ='$userinput' , password ='$passinput' WHERE id = '$id'";
-        if($database->exec($query)){
-            return true;
+        //$q = $database->query("SELECT * FROM users WHERE username = '$userinput'");
+        if($userinput && $passinput){
+            $passinput = hash("sha256", $passinput);
+            $database->query($query);
+            return true; 
         }else{
-            die("Unable to edit Please. <a href='/editform'> Try Again!");
+            die("Unable to Edit user. Please <a href='/deleteeditform'> Try Again!</a>");
         }
         $database = null;
     }

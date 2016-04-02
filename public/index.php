@@ -16,6 +16,7 @@ ini_set('display_errors', 1);
 define('VIEW_DIR', realpath(__DIR__ . '/../views'));
 define('CONTROLLER_DIR', realpath(__DIR__ . '/../App/Controller'));
 define('MODEL_DIR', realpath(__DIR__ . '/../App/Model'));
+define('IMAGE_DIR', realpath(__DIR__. '/../public/assets/Images'));
 
 
 /*******************
@@ -46,6 +47,9 @@ $router->addRoute('POST', '/userform',['App\\Controller\\UserController', 'invok
 $router->addRoute('GET', '/deleteeditform', ['App\\Controller\\UserController', 'showDeletePage']);
 $router->addRoute('POST', '/deleteeditform',['App\\Controller\\UserController', 'invokeDelete']);
 $router->addRoute('POST', '/editform', ['App\\Controller\\UserController', 'invokeEdit']);
+$router->addRoute('GET', '/upload',['App\\Controller\\ImageController', 'showPage']);
+$router->addRoute('POST', '/upload', ['App\\Controller\\ImageController', 'invokeUploadImage']);
+$router->addRoute('GET', '/showgallery',['App\\Controller\\ImageController', 'showGallery']);
 
 
 

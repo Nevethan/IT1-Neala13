@@ -9,7 +9,7 @@
     <body>
         <h1> UpLoad Your own Picture </h1>
         
-        <form action="UploadFormPage.php" method ="POST" enctype='multipart/form-data'>
+        <form action="/upload" method ="POST" enctype='multipart/form-data'>
             <fieldset>
                 <legend> Upload File </legend>
                     <input type="file" name="image"><br><br>
@@ -22,6 +22,7 @@
                     </ul>
             </fieldset>
         </form>
+        <a href="/showgallery"> Go to Gallery </a>
     </body>
 </html>
 
