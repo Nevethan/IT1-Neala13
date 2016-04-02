@@ -9,7 +9,7 @@
         <h1> Gallery</h1>
         <a href = "UploadFormPage.php"> UpLoad a Picture</a>
         <a href= "/logout"> LogOut </a>
-        <a href="/deleteform"> Delete User </a>
+        <a href="/deleteeditform"> Delete/Edit User </a>
         
         <ul>
             <li><figure> 

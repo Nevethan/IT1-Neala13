@@ -19,7 +19,6 @@ class LoginModel{
             
         if($username && $password){
             $this->validateUser($q);
-            
             return true;
         }else{
             die("Please Enter username and password, please! <a href='/'> Return to Login.</a>");
@@ -32,7 +31,7 @@ class LoginModel{
                 if ($rowsnumber != 0) {
                     while ($info = $query->fetch(PDO::FETCH_ASSOC)) {
                         $usernameDb = $info['username'];
-                        $_SESSION['username'] = $usernameDb;
+                        $_SESSION['username'] = $usernameDb;  
                     }
                 }else{
                     die("Username does not exist. Do you want to <a href='/userform'> Register?</a> " .  "or <a href='/'> Go Back?");

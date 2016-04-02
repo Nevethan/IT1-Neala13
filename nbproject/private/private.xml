@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/App/Controller/UserController.php</file>
             <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/views/pages/AddUserPage.php</file>
-            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/app/Model/LoginModel.php</file>
-            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/app/Controller/LoginController.php</file>
             <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/views/pages/Login.php</file>
-            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/App/DBConnection/Config.php</file>
-            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/app/Model/AddUserModel.php</file>
-            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/app/Controller/AddUserController.php</file>
+            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/App/Model/LoginModel.php</file>
+            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/App/Controller/LoginController.php</file>
+            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/views/pages/GalleryPage.php</file>
+            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/views/pages/DeleteUserPage.php</file>
             <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/public/index.php</file>
+            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/App/Model/UserModel.php</file>
+            <file>file:/C:/Users/Sivaranjiny/Documents/NetBeansProjects/IIT1/views/pages/UploadImagePage.php</file>
         </group>
     </open-files>
 </project-private>

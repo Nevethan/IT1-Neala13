@@ -43,8 +43,10 @@ $router->addRoute('POST','/gallery', ['App\\Controller\\LoginController', 'invok
 $router->addRoute('GET', '/logout', ['App\\Controller\\LoginController', 'logOut']);
 $router->addRoute('GET', '/userform',['App\\Controller\\UserController', 'showPage']);
 $router->addRoute('POST', '/userform',['App\\Controller\\UserController', 'invoke']);
-$router->addRoute('GET', '/deleteform', ['App\\Controller\\UserController', 'showDeletePage']);
-$router->addRoute('POST', '/deleteform',['App\\Controller\\UserController', 'invokeDelete']);
+$router->addRoute('GET', '/deleteeditform', ['App\\Controller\\UserController', 'showDeletePage']);
+$router->addRoute('POST', '/deleteeditform',['App\\Controller\\UserController', 'invokeDelete']);
+$router->addRoute('POST', '/editform', ['App\\Controller\\UserController', 'invokeEdit']);
+
 
 
 // Convert i.e. "/foo%40bar?id=1" to "/foo@bar"

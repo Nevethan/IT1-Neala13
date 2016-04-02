@@ -28,7 +28,7 @@ class UserController{
     }
     
     public function showDeletePage(){
-        require VIEW_DIR . '/pages/DeleteUserPage.php';
+        require VIEW_DIR . '/pages/DeleteEditUserPage.php';
     }
     
     public function invokeDelete(){
@@ -37,8 +37,18 @@ class UserController{
         if($result){
             echo "The User has been successfully Deleted. Have a Nice Day <a href='/'> Click here to Login";
         }else{
-            die("Unable to Delete User. Please <a href='/deleteform'> Try Again!");
+            die("Unable to Delete User. Please <a href='/deleteeditform'> Try Again!");
         }
+    }
+    
+    public function invokeEdit(){
+        $r = $this->addUser->validateUser();
         
+        if($r){
+            session_destroy();
+            echo "The User has been successfully Updated. Please <a href='/'>Login Again.";
+        }else{
+            die("Unable to Update User. Please <a href='/editform'> Try Again!"); 
+        }
     }
 }

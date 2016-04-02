@@ -22,7 +22,6 @@ class LoginController{
                         
         if($result){
             //header('Location: Gallery.php');
-            
             require VIEW_DIR . '/pages/GalleryPage.php';  
         }else{
             die("Unable to login");
@@ -32,8 +31,8 @@ class LoginController{
     
     public function logOut(){
         session_destroy();
-        
         require VIEW_DIR . '/pages/Login.php';
+        echo "Have a nice Day ;)";
     }
     
 }
