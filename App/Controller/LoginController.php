@@ -14,7 +14,7 @@ class LoginController{
     }
     
     public function showPage(){
-        require VIEW_DIR . '/pages/Login.php';  
+            require VIEW_DIR . '/pages/Login.php';
     }
     
     public function invoke(){

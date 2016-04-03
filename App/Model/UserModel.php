@@ -67,23 +67,29 @@ class UserModel{
         $database = null;
     }
     
-    public function validateUser(){
+    public function editUser(){
         $id = isset($_SESSION['id']);
         $userinput = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $passinput = filter_input(INPUT_POST,'password', FILTER_SANITIZE_NUMBER_INT);
+        $passinput = hash("sha256", $passinput);
         
         require CONTROLLER_DIR . '/DBConnection/Config.php';
         
-        $query = "UPDATE users SET username ='$userinput' , password ='$passinput' WHERE id = '$id'";
-        //$q = $database->query("SELECT * FROM users WHERE username = '$userinput'");
-        if($userinput && $passinput){
-            $passinput = hash("sha256", $passinput);
-            $database->query($query);
-            return true; 
-        }else{
-            die("Unable to Edit user. Please <a href='/deleteeditform'> Try Again!</a>");
-        }
-        $database = null;
-    }
+        $select = $database->query("SELECT * FROM users WHERE id ='$id'");
         
+        $query = "UPDATE users SET username ='$userinput' , password ='$passinput' WHERE id = '$id'";
+        
+        $info = $select->fetchColumn();
+        if($info == 1){
+            //$stm = $database->prepare($query);
+            $stm->bindParam(':username', $userinput, PDO::PARAM_STR);
+            $stm->bindParam(':password', $passinput, PDO::PARAM_INT);
+            $stm->bindParam(':id', $id, PDO::PARAM_INT);
+            $stm->exec($query);
+            $database = null;
+            return true;
+        }else{
+            die("Unable to Edit User. Please <a href='/deleteeditform'> Try Again!");
+        }
+    }
 }

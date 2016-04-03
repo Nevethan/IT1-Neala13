@@ -6,14 +6,19 @@ require MODEL_DIR . '/ImageModel.php';
 
 class ImageController{
     
-    private $image = null;
+    private $image;
     
     public function __construct(\App\Model\ImageModel $image) {
         $this->image = $image;
     }
     
     public function showPage(){
-        require VIEW_DIR . '/pages/UploadImagePage.php';
+        //if(filter_input(INPUT_SESSION, 'username')){
+            require VIEW_DIR . '/pages/UploadImagePage.php';  
+        //}else{
+          //  die("No Access <a href='/'> Try Again!");
+        //}
+        
     }
     
     public function showGallery(){
@@ -21,17 +26,16 @@ class ImageController{
     }
     
     public function invokeUploadImage(){
-        $result = $this->image->uploadImage();
+        $result->$this->image->uploadImage();
         
         if($result){
-            require VIEW_DIR . '/pages/UploadImagePage.php';
+            //header('Location: /gallery');
+            require VIEW_DIR . '/pages/GalleryPage.php';
+        }else{
+            die("NOOOOOO");
         }
         
     }
-    
-    
-    
-    
 }
-
+    
 

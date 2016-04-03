@@ -10,19 +10,25 @@
         <a href = "/upload"> UpLoad a Picture</a>
         <a href= "/logout"> LogOut </a>
         <a href="/deleteeditform"> Delete/Edit User </a>
+    <?php
+        require CONTROLLER_DIR . '/DBConnection/Config.php';
         
-        <ul>
-            <li><figure> 
-                    <img src="/assets/Images/Siva.jpg">
-                <figcaption> Siva the Destroyer</figcaption>
-                </figure>
-            </li>
-            <li><figure> 
-                    <img src="/assets/Images/pwyjBcW.jpg">
-                <figcaption> Meditation</figcaption>
-                </figure>
-            </li>
-        </ul>
+        $query = "SELECT * FROM images";
+        $stm = $database->prepare($query);
+        $stm->execute();
+        $dbinfo = $stm->fetch(PDO::FETCH_ASSOC);
+        
+        while($dbinfo){
+            echo    '<img src="data:image;base64,'.$dbinfo['image'].' "alt="'.$dbinfo['title'].'" width="300" height="300">';
+            echo    '<label> Title - </lable>'.$dbinfo['title']. '<br><br>';
+            
+            echo    '<form action="delete_image" method="POST">';
+            echo        '<input type="hidden" name="id" value="'.$dbinfo['id'].'"/>';
+            echo        '<button type="submit" value="Delete Image">';
+            echo    '</form>';
+                    
+        }
+        ?>
         
     </body>
 </html>

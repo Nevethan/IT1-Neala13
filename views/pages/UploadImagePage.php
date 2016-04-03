@@ -9,20 +9,15 @@
     <body>
         <h1> UpLoad Your own Picture </h1>
         
-        <form action="/upload" method ="POST" enctype='multipart/form-data'>
+        <form action="/uploadImage" method ="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend> Upload File </legend>
-                    <input type="file" name="image"><br><br>
+                    <input type="text" id="title" placeholder="Title"/><br><br> 
+                    <input type="file" name="image" accept="image/gif, image/jpeg, image/png"/><br><br>
                     <input type="submit" value='Upload'> 
-                    
-                    <ul>
-                        <li>File name: <?php echo $_FILES["image"]["name"];?>
-                        <li>File size: <?php echo $_FILES["image"]["size"];?>
-                        <li>File type: <?php echo $_FILES["image"]["type"];?>
-                    </ul>
+                 
             </fieldset>
         </form>
-        <a href="/showgallery"> Go to Gallery </a>
     </body>
 </html>
 

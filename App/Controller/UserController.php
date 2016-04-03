@@ -13,7 +13,13 @@ class UserController{
     }
     
     public function showPage(){
-        require VIEW_DIR . '/pages/AddUserPage.php';
+        
+        //if(filter_input(INPUT_SESSION, 'username')){
+            require VIEW_DIR . '/pages/AddUserPage.php';  
+        //}else{
+            //die("No Access <a href='/'> Try Again!");
+        //}
+        
         $this->addUser->showUsers();
     }
     
@@ -42,7 +48,7 @@ class UserController{
     }
     
     public function invokeEdit(){
-        $r = $this->addUser->validateUser();
+        $r = $this->addUser->editUser();
         
         if($r){
             session_destroy();
