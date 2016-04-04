@@ -49,8 +49,9 @@ $router->addRoute('GET', '/deleteeditform', ['App\\Controller\\UserController', 
 $router->addRoute('POST', '/deleteeditform',['App\\Controller\\UserController', 'invokeDelete']);
 $router->addRoute('POST', '/editform', ['App\\Controller\\UserController', 'invokeEdit']);
 $router->addRoute('GET', '/upload',['App\\Controller\\ImageController', 'showPage']);
-$router->addRoute('POST', '/uploadImage', ['App\\Controller\\ImageController', 'invokeUploadImage']);
-$router->addRoute('GET', '/uploadImage', ['App\\Controller\\ImageController', 'invokeUploadImage']);
+$router->addRoute('POST', '/upload', ['App\\Controller\\ImageController', 'invokeUploadImagePage']);
+$router->addRoute('POST', '/upload', ['App\\Controller\\ImageController', 'invokeUploadImagePage']);
+$router->addRoute('POST', '/deleteimage', ['App\\Controller\\ImageController', 'invokeDeleteImage']);
 $router->addRoute('GET', '/showgallery',['App\\Controller\\ImageController', 'showGallery']);
 
 

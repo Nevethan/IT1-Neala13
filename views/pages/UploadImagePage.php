@@ -9,16 +9,12 @@
     <body>
         <h1> UpLoad Your own Picture </h1>
         
-        <form action="/uploadImage" method ="POST" enctype="multipart/form-data">
-            <fieldset>
-                <legend> Upload File </legend>
-                    <input type="text" id="title" placeholder="Title"/><br><br> 
-                    <input type="file" name="image" accept="image/gif, image/jpeg, image/png"/><br><br>
-                    <input type="submit" value='Upload'> 
-                 
-            </fieldset>
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <input type="file" name="filename" accept="image/gif, image/jpeg, image/png"><br>
+            <input type="text" name="title" id="title" placeholder="Insert Title" maxlength="100" />
+            <br><br>
+            <input type="submit" value="Upload"/>
         </form>
-    </body>
 </html>
 
 <?php
